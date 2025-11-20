@@ -1,16 +1,17 @@
-## Hi there 👋
+# MantaTools Latest Version Repository
 
-<!--
-**MantaTools/MantaTools** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+This repository is used to store and provide the **latest version of MantaTools**.  
+The MantaTools app fetches updates from here to ensure users always receive the newest build.
 
-Here are some ideas to get you started:
+## 📥 Download
+You can download the latest version of MantaTools from the **Releases** page.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+➡️ Open the **Releases** tab on the right → select the latest version → download the available files.
+
+## 🔄 Updates
+This repository is updated whenever a new version is released.  
+MantaTools automatically checks for updates from this repo.
+
+## ❗ Note
+This repository **does not contain source code**.  
+All files here are only for **distribution and update purposes** for MantaTools.
