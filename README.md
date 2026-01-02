@@ -2,17 +2,17 @@
   
 # 🎮 MantaTools
 
-<img src="https://raw.githubusercontent.com/MantaTools/MantaTools-new/main/resources/icon.png" alt="MantaTools Logo" width="150" height="150">
+<img src="https://raw.githubusercontent.com/MantaTools/MantaTools/main/resources/icon.png" alt="MantaTools Logo" width="150" height="150">
 
 ### Your Ultimate Game Management Companion
 
-[![Latest Release](https://img.shields.io/github/v/release/MantaTools/MantaTools-new?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4361ee)](https://github.com/MantaTools/MantaTools-new/releases)
-[![Downloads](https://img.shields.io/github/downloads/MantaTools/MantaTools-new/total?style=for-the-badge&logo=download&logoColor=white&labelColor=1a1a2e&color=7209b7)](https://github.com/MantaTools/MantaTools-new/releases)
-[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/MantaTools/MantaTools-new/releases)
+[![Latest Release](https://img.shields.io/github/v/release/MantaTools/MantaTools-new?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e&color=4361ee)](https://github.com/MantaTools/MantaTools/releases)
+[![Downloads](https://img.shields.io/github/downloads/MantaTools/MantaTools-new/total?style=for-the-badge&logo=download&logoColor=white&labelColor=1a1a2e&color=7209b7)](https://github.com/MantaTools/MantaTools/releases)
+[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/MantaTools/MantaTools/releases)
 
 <br>
 
-[**⬇️ Download Latest**](https://github.com/MantaTools/MantaTools-new/releases/latest) • [**📋 Changelog**](https://github.com/MantaTools/MantaTools-new/releases) • [**💬 Discord**](https://discord.gg/mantagames)
+[**⬇️ Download Latest**](https://github.com/MantaTools/MantaTools/releases/latest) • [**📋 Changelog**](https://github.com/MantaTools/MantaTools/releases) • [**💬 Discord**](https://discord.gg/mantagames)
 
 </div>
 
