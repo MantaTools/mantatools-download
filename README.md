@@ -76,7 +76,7 @@ Sleek dark theme with smooth animations
 
 | Home | Catalogue | Game Details |
 |:---:|:---:|:---:|
-| ![Home](https://via.placeholder.com/300x180/1a1a2e/ffffff?text=Home) | ![Catalogue](https://via.placeholder.com/300x180/1a1a2e/ffffff?text=Catalogue) | ![Details](https://via.placeholder.com/300x180/1a1a2e/ffffff?text=Details) |
+| ![Home](https://raw.githubusercontent.com/MantaTools/MantaTools/main/resources/home.png) | ![Catalogue](https://raw.githubusercontent.com/MantaTools/MantaTools/main/resources/catalogue.png) | ![Details](https://raw.githubusercontent.com/MantaTools/MantaTools/main/resources/details-game.png) |
 
 </div>
 
