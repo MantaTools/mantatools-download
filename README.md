@@ -1,6 +1,6 @@
 <div align="center">
   
-# 🎮 MantaTools
+# MantaTools
 
 <img src="https://raw.githubusercontent.com/MantaTools/MantaTools/main/resources/icon.png" alt="MantaTools Logo" width="150" height="150">
 
