@@ -94,8 +94,8 @@ MantaTools automatically checks for updates on startup. When a new version is av
 
 | Platform | Link |
 |:---:|:---:|
-| 💬 Discord | [Join Server](https://discord.gg/mantagames) |
-| 🌐 Website | [mantagames.store](https://mantagames.store) |
+| 💬 Discord | [Join Server](https://discord.gg/yBYsHXtZrR) |
+| 🌐 Website | [mantagames.store](https://lynk.id/mantagames) |
 | 📧 Email | support@mantagames.store |
 
 </div>
