@@ -31,6 +31,10 @@ jobs:
             exit 1
           fi
 
+          # Branding constants (logo + the HTML-designed release banner).
+          LOGO="https://api.mantagames.id/imgs/logo.png?v=2"
+          BANNER="https://raw.githubusercontent.com/MantaTools/mantatools-download/main/assets/release-banner.png"
+
           # Version label: prefer the release name, fall back to the tag.
           VERSION="${RELEASE_NAME:-}"
           [ -z "$VERSION" ] && VERSION="${RELEASE_TAG:-}"
@@ -42,40 +46,46 @@ jobs:
             | select(.name | endswith("-setup.exe"))
             | .browser_download_url' "$GITHUB_EVENT_PATH" | head -n1)
 
-          # Release notes. Fall back to a generic line, trim to stay under
-          # Discord's 4096-char embed limit, and drop any byte that a mid-string
-          # cut left invalid so jq/Discord never choke on broken UTF-8.
+          # Release notes. Fall back to a generic line, trim to stay well under
+          # Discord's 4096-char embed limit, and drop any byte a mid-string cut
+          # left invalid so jq/Discord never choke on broken UTF-8.
           BODY="${RELEASE_BODY:-}"
           if [ -z "$BODY" ]; then
-            BODY="Versi baru MantaTools sudah tersedia. Buka aplikasi untuk memperbarui otomatis."
+            BODY="Versi baru MantaTools sudah tersedia."
           fi
-          BODY=$(printf '%s' "$BODY" | head -c 3500 | iconv -f utf-8 -t utf-8 -c)
+          BODY=$(printf '%s' "$BODY" | head -c 3000 | iconv -f utf-8 -t utf-8 -c)
 
-          # Download / release links shown under the notes.
+          # Download section appended under the notes (Discord markdown).
           if [ -n "$SETUP_URL" ] && [ "$SETUP_URL" != "null" ]; then
-            LINKS="[⬇️ Download installer]($SETUP_URL)  •  [📄 Semua file rilis]($RELEASE_URL)"
+            DL="[⬇️ Download installer]($SETUP_URL) · [📄 Semua file rilis]($RELEASE_URL)"
           else
-            LINKS="[📄 Lihat rilis & download]($RELEASE_URL)"
+            DL="[📄 Lihat rilis & download]($RELEASE_URL)"
           fi
-          DESC=$(printf '%s\n\n%s' "$BODY" "$LINKS")
+          DESC=$(printf '%s\n\n### Unduh\n%s\n-# Atau buka aplikasi untuk memperbarui otomatis.' "$BODY" "$DL")
 
           # Build the webhook payload with jq so all escaping is handled safely
           # (the release notes are untrusted free text).
           PAYLOAD=$(jq -n \
-            --arg title "🎮 MantaTools ${VERSION} dirilis" \
+            --arg author "Update Aplikasi Tersedia" \
+            --arg logo "$LOGO" \
+            --arg title "MantaTools ${VERSION}" \
             --arg desc "$DESC" \
-            --arg url "${RELEASE_URL}" \
-            --arg ts "${RELEASE_TIME}" \
-            --arg footer "MantaTools • ${RELEASE_TAG}" \
+            --arg url "$RELEASE_URL" \
+            --arg banner "$BANNER" \
+            --arg ts "$RELEASE_TIME" \
+            --arg footer "Manta Games • Rilis ${RELEASE_TAG}" \
             '{
-              username: "MantaTools Releases",
+              username: "MantaTools",
+              avatar_url: $logo,
               embeds: [ {
+                author: { name: $author, icon_url: $logo },
                 title: $title,
-                description: $desc,
                 url: $url,
-                color: 3900150,
-                timestamp: $ts,
-                footer: { text: $footer }
+                description: $desc,
+                color: 959977,
+                image: { url: $banner },
+                footer: { text: $footer, icon_url: $logo },
+                timestamp: $ts
               } ]
             }')
 
