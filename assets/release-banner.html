@@ -15,131 +15,35 @@
       }
       body {
         font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-        background:
-          radial-gradient(
-            1100px 560px at 80% -12%,
-            rgba(14, 165, 233, 0.22),
-            transparent 60%
-          ),
-          radial-gradient(
-            900px 520px at 8% 120%,
-            rgba(59, 130, 246, 0.16),
-            transparent 60%
-          ),
-          #0a0b10;
+        /* Flat near-black with a subtle center vignette for depth (no glow). */
+        background: radial-gradient(1000px 640px at 50% 42%, #15171f, #0a0b10 72%);
         color: #fff;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-      }
-      .frame {
-        position: absolute;
-        inset: 18px;
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 22px;
-      }
-      .brandmark {
-        position: absolute;
-        top: 36px;
-        right: 58px;
-        font-size: 19px;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        color: rgba(255, 255, 255, 0.5);
-      }
-      .content {
-        display: flex;
-        align-items: center;
-        gap: 48px;
-        padding: 0 76px;
-        width: 100%;
-      }
-      .logo {
-        width: 150px;
-        height: 150px;
-        flex: 0 0 auto;
-        filter: drop-shadow(0 14px 44px rgba(14, 165, 233, 0.38));
-      }
-      .text {
         display: flex;
         flex-direction: column;
-        gap: 16px;
-      }
-      .eyebrow {
-        display: flex;
         align-items: center;
-        gap: 11px;
-        font-size: 20px;
-        font-weight: 600;
-        letter-spacing: 2.5px;
-        text-transform: uppercase;
-        color: #7dd3fc;
+        justify-content: center;
+        gap: 30px;
       }
-      .eyebrow .dot {
-        width: 9px;
-        height: 9px;
-        border-radius: 50%;
-        background: #22c55e;
-        box-shadow: 0 0 12px #22c55e;
+      .logo {
+        width: 96px;
+        height: 96px;
       }
-      .headline {
-        font-size: 66px;
+      .title {
+        font-size: 82px;
         font-weight: 800;
-        line-height: 1.03;
-        letter-spacing: -1.2px;
+        letter-spacing: -2px;
       }
-      .headline .accent {
-        background: linear-gradient(90deg, #38bdf8, #3b82f6);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-      .sub {
-        font-size: 24px;
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.62);
-      }
-      .chips {
-        display: flex;
-        gap: 12px;
-        margin-top: 8px;
-      }
-      .chip {
-        font-size: 17px;
-        font-weight: 600;
-        color: #cbd5e1;
-        background: rgba(255, 255, 255, 0.06);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 8px 17px;
-        border-radius: 999px;
-      }
-      .bar {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 6px;
-        background: linear-gradient(90deg, #0ea5e9, #3b82f6, #22c55e);
+      .accent {
+        width: 104px;
+        height: 4px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, #0ea5e9, #3b82f6);
       }
     </style>
   </head>
   <body>
-    <div class="frame"></div>
-    <div class="brandmark">MantaTools</div>
-    <div class="content">
-      <img class="logo" src="logo.png" alt="" />
-      <div class="text">
-        <div class="eyebrow"><span class="dot"></span> Update Tersedia</div>
-        <div class="headline">Versi Baru<br /><span class="accent">Telah Rilis</span></div>
-        <div class="sub">Buka aplikasi untuk memperbarui otomatis</div>
-        <div class="chips">
-          <span class="chip">Steam Unlocker</span>
-          <span class="chip">Denuvo</span>
-          <span class="chip">Game Bypass</span>
-        </div>
-      </div>
-    </div>
-    <div class="bar"></div>
+    <img class="logo" src="logo.png" alt="" />
+    <div class="title">MantaTools Release</div>
+    <div class="accent"></div>
   </body>
 </html>

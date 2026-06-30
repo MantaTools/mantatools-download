@@ -57,11 +57,11 @@ jobs:
 
           # Download section appended under the notes (Discord markdown).
           if [ -n "$SETUP_URL" ] && [ "$SETUP_URL" != "null" ]; then
-            DL="[⬇️ Download installer]($SETUP_URL) · [📄 Semua file rilis]($RELEASE_URL)"
+            DL="[Download installer]($SETUP_URL) · [Semua file rilis]($RELEASE_URL)"
           else
-            DL="[📄 Lihat rilis & download]($RELEASE_URL)"
+            DL="[Lihat rilis & download]($RELEASE_URL)"
           fi
-          DESC=$(printf '%s\n\n### Unduh\n%s\n-# Atau buka aplikasi untuk memperbarui otomatis.' "$BODY" "$DL")
+          DESC=$(printf '%s\n\n%s\n-# Atau buka aplikasi untuk memperbarui otomatis.' "$BODY" "$DL")
 
           # Build the webhook payload with jq so all escaping is handled safely
           # (the release notes are untrusted free text).
