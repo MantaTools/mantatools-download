@@ -2,48 +2,102 @@
 <html lang="id">
   <head>
     <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Condensed:ital,wght@0,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html,
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1200px; height: 480px; }
       body {
-        width: 1200px;
-        height: 480px;
-      }
-      body {
-        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-        /* Flat near-black with a subtle center vignette for depth (no glow). */
-        background: radial-gradient(1000px 640px at 50% 42%, #15171f, #0a0b10 72%);
+        font-family: "Saira Condensed", sans-serif;
+        background: #0a0b10;
         color: #fff;
+        overflow: hidden;
+        position: relative;
+      }
+      .speed {
+        position: absolute;
+        inset: 0;
+        background-image: repeating-linear-gradient(
+          -11deg,
+          rgba(255, 255, 255, 0.025) 0 2px,
+          transparent 2px 26px
+        );
+      }
+      /* Big diagonal blue half on the left; content sits entirely on it. */
+      .split {
+        position: absolute;
+        top: -60px;
+        bottom: -60px;
+        left: -320px;
+        width: 1300px;
+        transform: skewX(-11deg);
+        transform-origin: top center;
+        background: linear-gradient(118deg, #0284c7, #2563eb);
+        box-shadow: 26px 0 72px rgba(0, 0, 0, 0.42);
+      }
+      .edge {
+        position: absolute;
+        top: -60px;
+        bottom: -60px;
+        left: 980px;
+        width: 12px;
+        transform: skewX(-11deg);
+        transform-origin: top center;
+        background: #22d3ee;
+        box-shadow: 0 0 26px rgba(34, 211, 238, 0.5);
+      }
+      .content {
+        position: absolute;
+        inset: 0;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 30px;
+        gap: 42px;
+        padding: 0 76px;
       }
       .logo {
-        width: 96px;
-        height: 96px;
+        width: 140px;
+        height: 140px;
+        flex: 0 0 auto;
+        filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.55));
       }
-      .title {
-        font-size: 82px;
+      .txt { display: flex; flex-direction: column; }
+      .brand {
+        font-weight: 900;
+        font-style: italic;
+        font-size: 100px;
+        line-height: 0.84;
+        letter-spacing: -1px;
+        text-transform: uppercase;
+        text-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+      }
+      .rel {
+        align-self: flex-start;
+        margin-top: 14px;
+        background: #fff;
+        color: #0b1220;
         font-weight: 800;
-        letter-spacing: -2px;
-      }
-      .accent {
-        width: 104px;
-        height: 4px;
-        border-radius: 2px;
-        background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+        font-style: italic;
+        font-size: 38px;
+        letter-spacing: 9px;
+        text-transform: uppercase;
+        padding: 2px 17px 4px;
       }
     </style>
   </head>
   <body>
-    <img class="logo" src="logo.png" alt="" />
-    <div class="title">MantaTools Release</div>
-    <div class="accent"></div>
+    <div class="speed"></div>
+    <div class="split"></div>
+    <div class="edge"></div>
+    <div class="content">
+      <img class="logo" src="logo.png" alt="" />
+      <div class="txt">
+        <div class="brand">MantaTools</div>
+        <div class="rel">Release</div>
+      </div>
+    </div>
   </body>
 </html>

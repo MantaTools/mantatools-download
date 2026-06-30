@@ -33,7 +33,7 @@ jobs:
 
           # Branding constants (logo + the HTML-designed release banner).
           LOGO="https://api.mantagames.id/imgs/logo.png?v=2"
-          BANNER="https://raw.githubusercontent.com/MantaTools/mantatools-download/main/assets/release-banner.png?v=2"
+          BANNER="https://raw.githubusercontent.com/MantaTools/mantatools-download/main/assets/release-banner.png?v=3"
 
           # Version label: prefer the release name, fall back to the tag.
           VERSION="${RELEASE_NAME:-}"
