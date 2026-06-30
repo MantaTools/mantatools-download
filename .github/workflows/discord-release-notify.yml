@@ -1,0 +1,86 @@
+name: Discord Release Notify
+
+# Announce a new MantaTools release to a Discord channel when a GitHub release is
+# published. electron-builder uploads the installers to a DRAFT release; this
+# fires only once that draft is actually published, so the assets already exist.
+on:
+  release:
+    types: [published]
+
+# No GITHUB_TOKEN permissions needed — we only read the event payload (a local
+# file) and POST to an external Discord webhook.
+permissions: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send release announcement to Discord
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_RELEASE_WEBHOOK }}
+          RELEASE_NAME: ${{ github.event.release.name }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+          RELEASE_BODY: ${{ github.event.release.body }}
+          RELEASE_URL: ${{ github.event.release.html_url }}
+          RELEASE_TIME: ${{ github.event.release.published_at }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${DISCORD_WEBHOOK:-}" ]; then
+            echo "::error::DISCORD_RELEASE_WEBHOOK secret is not set; skipping."
+            exit 1
+          fi
+
+          # Version label: prefer the release name, fall back to the tag.
+          VERSION="${RELEASE_NAME:-}"
+          [ -z "$VERSION" ] && VERSION="${RELEASE_TAG:-}"
+
+          # Direct download URL for the NSIS installer asset (…-setup.exe), read
+          # from the event payload so the version is never hard-coded.
+          SETUP_URL=$(jq -r '
+            .release.assets[]?
+            | select(.name | endswith("-setup.exe"))
+            | .browser_download_url' "$GITHUB_EVENT_PATH" | head -n1)
+
+          # Release notes. Fall back to a generic line, trim to stay under
+          # Discord's 4096-char embed limit, and drop any byte that a mid-string
+          # cut left invalid so jq/Discord never choke on broken UTF-8.
+          BODY="${RELEASE_BODY:-}"
+          if [ -z "$BODY" ]; then
+            BODY="Versi baru MantaTools sudah tersedia. Buka aplikasi untuk memperbarui otomatis."
+          fi
+          BODY=$(printf '%s' "$BODY" | head -c 3500 | iconv -f utf-8 -t utf-8 -c)
+
+          # Download / release links shown under the notes.
+          if [ -n "$SETUP_URL" ] && [ "$SETUP_URL" != "null" ]; then
+            LINKS="[⬇️ Download installer]($SETUP_URL)  •  [📄 Semua file rilis]($RELEASE_URL)"
+          else
+            LINKS="[📄 Lihat rilis & download]($RELEASE_URL)"
+          fi
+          DESC=$(printf '%s\n\n%s' "$BODY" "$LINKS")
+
+          # Build the webhook payload with jq so all escaping is handled safely
+          # (the release notes are untrusted free text).
+          PAYLOAD=$(jq -n \
+            --arg title "🎮 MantaTools ${VERSION} dirilis" \
+            --arg desc "$DESC" \
+            --arg url "${RELEASE_URL}" \
+            --arg ts "${RELEASE_TIME}" \
+            --arg footer "MantaTools • ${RELEASE_TAG}" \
+            '{
+              username: "MantaTools Releases",
+              embeds: [ {
+                title: $title,
+                description: $desc,
+                url: $url,
+                color: 3900150,
+                timestamp: $ts,
+                footer: { text: $footer }
+              } ]
+            }')
+
+          curl -sS -f \
+            -H "Content-Type: application/json" \
+            -X POST \
+            -d "$PAYLOAD" \
+            "$DISCORD_WEBHOOK"
