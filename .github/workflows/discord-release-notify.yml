@@ -43,23 +43,23 @@ jobs:
           # left invalid so jq/Discord never choke on broken UTF-8.
           BODY="${RELEASE_BODY:-}"
           if [ -z "$BODY" ]; then
-            BODY="Versi baru MantaTools sudah tersedia."
+            BODY="A new version of MantaTools is available."
           fi
           BODY=$(printf '%s' "$BODY" | head -c 3000 | iconv -f utf-8 -t utf-8 -c)
 
           # No links in the body — the app updates itself, so that is the CTA.
-          DESC=$(printf '%s\n\n-# Buka aplikasi untuk memperbarui otomatis.' "$BODY")
+          DESC=$(printf '%s\n\n-# Open the app to update automatically.' "$BODY")
 
           # Build the webhook payload with jq so all escaping is handled safely
           # (the release notes are untrusted free text).
           PAYLOAD=$(jq -n \
-            --arg author "Update Aplikasi Tersedia" \
+            --arg author "App Update Available" \
             --arg logo "$LOGO" \
             --arg title "MantaTools ${VERSION}" \
             --arg desc "$DESC" \
             --arg banner "$BANNER" \
             --arg ts "$RELEASE_TIME" \
-            --arg footer "Manta Games • Rilis ${RELEASE_TAG}" \
+            --arg footer "Manta Games • Release ${RELEASE_TAG}" \
             '{
               username: "MantaTools",
               avatar_url: $logo,
