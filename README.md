@@ -6,7 +6,7 @@
 
 **Your Steam library, supercharged.**
 
-[![Version](https://img.shields.io/badge/version-2.2.2-6366f1?style=for-the-badge)](https://github.com/MantaTools/mantatools-download/releases/latest)
+[![Version](https://img.shields.io/github/v/release/MantaTools/mantatools-download?style=for-the-badge&color=6366f1&label=version)](https://github.com/MantaTools/mantatools-download/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/MantaTools/mantatools-download/total?style=for-the-badge&color=8b5cf6)](https://github.com/MantaTools/mantatools-download/releases/latest)
 [![Platform](https://img.shields.io/badge/platform-Windows-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/MantaTools/mantatools-download/releases/latest)
 
@@ -20,8 +20,10 @@
 
 ## Apa itu MantaTools?
 
-MantaTools adalah desktop app untuk mengelola dan menambahkan game ke Steam library kamu.
-Beli produk di [mantagames.id](https://mantagames.id), login di app, dan semua game langsung tersedia.
+MantaTools adalah aplikasi desktop untuk mengelola dan menambahkan game ke Steam library Anda.
+Beli produk di [mantagames.id](https://mantagames.id), login di aplikasi, dan game Anda langsung tersedia.
+
+Game dari MantaTools ditujukan untuk dimainkan **offline (single-player)**.
 
 <br />
 
@@ -30,31 +32,35 @@ Beli produk di [mantagames.id](https://mantagames.id), login di app, dan semua g
 <table>
 <tr>
 <td width="50" align="center">📚</td>
-<td><strong>Catalogue</strong> — Jelajahi koleksi game lengkap dengan filter Genre, Tags, Developer, dan Publisher.</td>
+<td><strong>Catalogue</strong>: jelajahi koleksi game lengkap dengan filter Genre, Tags, Developer, dan Publisher.</td>
 </tr>
 <tr>
 <td align="center">🎮</td>
-<td><strong>Add to Steam</strong> — Tambahkan game ke Steam library dengan satu klik. Auto-sync dengan akun Steam kamu.</td>
+<td><strong>Add to Steam</strong>: tambahkan game ke Steam library dengan satu klik. Auto-sync dengan akun Steam Anda.</td>
 </tr>
 <tr>
-<td align="center">👥</td>
-<td><strong>Multiplayer Fix</strong> — 1,752+ game multiplayer tersedia. Download fix dan main bareng teman.</td>
+<td align="center">🕹️</td>
+<td><strong>Fokus Main Offline</strong>: game dimainkan offline (single-player). Untuk sebagian game tersedia opsi multiplayer lewat server online-fix, bukan server resmi Steam, sehingga tidak bisa bermain bersama pemain Steam resmi dan koneksinya tidak dijamin stabil.</td>
 </tr>
 <tr>
 <td align="center">🛡️</td>
-<td><strong>Denuvo Activation</strong> — Aktivasi game Denuvo langsung dari app. Support multiple Steam account.</td>
+<td><strong>Denuvo Activation</strong>: aktivasi game Denuvo sendiri langsung dari aplikasi lewat tombol Generate Denuvo Token, tanpa tiket atau admin (sesuai paket Anda).</td>
 </tr>
 <tr>
 <td align="center">🔓</td>
-<td><strong>Game Bypass</strong> — Bypass launcher Activision, EA, Rockstar, Ubisoft, dan lainnya.</td>
+<td><strong>Game Bypass</strong>: bypass launcher Activision, EA, Rockstar, Ubisoft, dan lainnya.</td>
 </tr>
 <tr>
 <td align="center">⬆️</td>
-<td><strong>Upgrade Plan</strong> — Upgrade plan langsung dari app — bayar selisih harga aja.</td>
+<td><strong>Upgrade Plan</strong>: upgrade plan langsung dari aplikasi, cukup bayar selisih harga. Bonus Denuvo Access hanya berlaku untuk pembelian Premium Bundle langsung di website, tidak untuk upgrade lewat aplikasi.</td>
+</tr>
+<tr>
+<td align="center">💻</td>
+<td><strong>Reset Device</strong>: pindah PC? Lepaskan Order ID dari PC lama sendiri di <a href="https://mantagames.id/unbind">mantagames.id/unbind</a>.</td>
 </tr>
 <tr>
 <td align="center">🔄</td>
-<td><strong>Auto-Update</strong> — App selalu up-to-date. Progress download ditampilkan realtime.</td>
+<td><strong>Auto-Update</strong>: aplikasi selalu up-to-date. Progress download ditampilkan realtime.</td>
 </tr>
 </table>
 
@@ -62,13 +68,13 @@ Beli produk di [mantagames.id](https://mantagames.id), login di app, dan semua g
 
 ## Instalasi
 
-1. Download **[mantatools-2.2.2-setup.exe](https://github.com/MantaTools/mantatools-download/releases/latest)** dari halaman Releases
+1. Download installer terbaru (`mantatools-x.y.z-setup.exe`) dari **[halaman Releases](https://github.com/MantaTools/mantatools-download/releases/latest)**
 2. Jalankan installer
 3. Login dengan Order ID dari [mantagames.id](https://mantagames.id)
-4. Selesai — jelajahi catalogue dan tambahkan game ke Steam
+4. Selesai, jelajahi catalogue dan tambahkan game ke Steam
 
 > [!WARNING]
-> Matikan **Windows Defender / Antivirus** sebelum menggunakan fitur Multiplayer Fix dan Game Bypass.
+> Tambahkan folder game ke exclusion list antivirus (atau matikan Windows Defender sementara) sebelum memakai fitur Game Bypass atau Multiplayer Fix.
 
 <br />
 
@@ -84,65 +90,9 @@ Beli produk di [mantagames.id](https://mantagames.id), login di app, dan semua g
 
 <br />
 
-## Changelog
+## Catatan Rilis
 
-### v2.2.2 — Multiplayer Update `Latest`
-> 17 Feb 2026
-
-- Multiplayer catalogue expanded to 1,752 games
-- Real-time extraction progress reporting
-- Warning bar: disable antivirus before applying fix
-- Fixed: false 'Update Available' after Add to Steam
-
-### v2.2.1 — Catalogue Overhaul
-> 13 Feb 2026
-
-- Cleaner catalogue: only real games, no more DLCs/demos/playtests
-- Filter by Tags, Developers, Publishers, and Tier
-- Randomized Hot Now games on every app launch
-
-### v2.2.0 — DRM: Denuvo & Bypass
-> 12 Feb 2026
-
-- Denuvo badge on game cards
-- Game Requirements modal for Denuvo-protected games
-- Denuvo Activation: Multiple Steam accounts with account selector
-- Bypass: Game-specific notes (e.g. launch options)
-
-<details>
-<summary>&nbsp;<strong>Older versions</strong></summary>
-<br />
-
-### v2.1.9 — Upgrade Plan Improvements
-> 7 Feb 2026
-
-- Fixed: Games from 'Claim Your Game Here' section not appearing
-- Limited-time upgrade discount with countdown timer
-- Show all plans with current plan highlighted
-- Improved Upgrade Plan page UI
-
-### v2.1.8 — Upgrade Plan
-> 6 Feb 2026
-
-- Upgrade plan directly from the app with discounted price
-- Only pay the price difference from your current plan
-- Restart App button after successful upgrade
-
-### v2.1.7 — Stability Fix
-> 6 Feb 2026
-
-- Auto-retry dengan smart delay jika request gagal
-- Request deduplication — tidak ada duplicate request
-- Auto-cancel request lama saat pindah game
-
-### v2.1.6
-> 5 Feb 2026
-
-- Library sync now removes uninstalled games
-- Fixed Surprise Me button not showing game details
-- Auto-update now shows download progress, size, and speed
-
-</details>
+Catatan rilis setiap versi ada di **[halaman Releases](https://github.com/MantaTools/mantatools-download/releases)**. Aplikasi memperbarui dirinya sendiri secara otomatis.
 
 <br />
 
@@ -160,7 +110,21 @@ Ini false positive. Tambahkan folder MantaTools ke exclusion list Windows Defend
 <details>
 <summary>&nbsp;<strong>Login gagal / "Invalid Order ID"?</strong></summary>
 <br />
-Pastikan Order ID yang dimasukkan benar (dari email konfirmasi pembelian di mantagames.id). Satu Order ID hanya bisa digunakan di satu device.
+Pastikan Order ID yang dimasukkan benar (dari email konfirmasi pembelian di mantagames.id). Satu Order ID hanya aktif di satu device dalam satu waktu.
+<br /><br />
+</details>
+
+<details>
+<summary>&nbsp;<strong>Pindah PC atau Order ID aktif di perangkat lain?</strong></summary>
+<br />
+Lepaskan Order ID dari PC lama sendiri di <a href="https://mantagames.id/unbind">mantagames.id/unbind</a> memakai Order ID dan email pembelian, lalu login lagi. Gratis, maksimal 5 kali per Order ID dengan jeda 7 hari antar reset. Ganti SSD saja tidak memutus ikatan device.
+<br /><br />
+</details>
+
+<details>
+<summary>&nbsp;<strong>Apakah game bisa dimainkan online?</strong></summary>
+<br />
+Game dari MantaTools ditujukan untuk dimainkan offline (single-player) dan tidak terhubung ke server online resmi Steam. Opsi multiplayer untuk sebagian game berjalan lewat server online-fix, bukan server resmi Steam, dan tidak dijamin stabil. Jika ingin bermain online di server resmi, beli game-nya langsung di Steam.
 <br /><br />
 </details>
 
@@ -172,9 +136,9 @@ Restart Steam setelah menambahkan game. Pastikan Steam sedang berjalan saat pros
 </details>
 
 <details>
-<summary>&nbsp;<strong>Multiplayer fix / Bypass gagal?</strong></summary>
+<summary>&nbsp;<strong>Multiplayer Fix / Bypass gagal?</strong></summary>
 <br />
-Matikan Windows Defender dan antivirus lainnya sebelum mendownload dan mengekstrak fix. Antivirus sering memblokir atau menghapus file yang diperlukan.
+Tambahkan folder game ke exclusion list antivirus, atau matikan Windows Defender sementara, sebelum menerapkan fix. Antivirus sering memblokir atau menghapus file yang diperlukan.
 <br /><br />
 </details>
 
